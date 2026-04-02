@@ -1,24 +1,36 @@
 @import 'styles/variables';
 
+%nav-link-shared {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
 .header {
   width: 100%;
   height: 109px;
   background: $main-gradient;
-  display: flex;
-  align-items: center;
   position: sticky;
   top: 0;
   z-index: 1000;
+  overflow-x: clip;
 }
 
 .container {
   max-width: 1440px;
   margin: 0 auto;
   width: 100%;
+  height: 100%;
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1001;
 }
 
 .navList {
@@ -27,14 +39,8 @@
 }
 
 .link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  @extend %nav-link-shared;
   color: $font-main;
-  font-family: 'Roboto', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  transition: color 0.3s ease;
 
   .icon {
     fill: none;
@@ -50,48 +56,77 @@
   }
 }
 
+.activeLink {
+  @extend %nav-link-shared;
+  color: $light-orange;
+
+  .icon {
+    fill: $light-orange;
+    stroke: $light-orange;
+    stroke-width: 2px;
+  }
+}
+
 .burgerBtn {
   display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1002;
 }
+
 .socials {
   display: none;
   gap: 20px;
+
   svg {
     width: 32px;
     height: 32px;
     fill: $white;
+    transition: fill 0.3s ease;
+
+    &:hover {
+      fill: $light-orange;
+    }
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .burgerBtn {
     display: block;
-    background: none;
-    border: none;
   }
 
   .nav {
-    position: fixed;
-    background-color: $main-gradient;
+    position: absolute;
     top: 109px;
-    left: -100%;
+    right: -100%;
     width: 100%;
-    height: calc(100vh - 109px);
+    height: 207px;
+    background: $main-gradient;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 50px;
-    transition: left 0.4s ease;
+    transition: right 0.2s ease-in-out;
+    z-index: -1;
+  }
+
+  .nav.navOpen {
+    right: 0;
   }
 
   .navList {
     flex-direction: column;
+    gap: 25px;
     align-items: center;
   }
 
   .socials {
     display: flex;
+    gap: 24px;
+    padding-top: 5px;
+    margin-top: 20px;
   }
 }
 
@@ -99,27 +134,8 @@
   .container {
     padding: 0 15px;
   }
+
   .logo svg {
     width: 160px;
-    height: auto;
-  }
-}
-.nav.navOpen {
-  left: 0;
-}
-
-.activeLink {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: $light-orange;
-  font-family: 'Roboto', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-
-  .icon {
-    fill: $light-orange;
-    stroke: $light-orange;
-    stroke-width: 2px;
   }
 }

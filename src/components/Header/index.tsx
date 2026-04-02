@@ -18,10 +18,6 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <button className={styles.burgerBtn} onClick={toggleMenu}>
-          <BurgerIcon />
-        </button>
-
         <NavLink to="/" className={styles.logo} onClick={closeMenu}>
           <Logo width="287" height="49" />
         </NavLink>
@@ -62,6 +58,9 @@ const Header: React.FC = () => {
             </a>
           </div>
         </nav>
+        <button className={styles.burgerBtn} onClick={toggleMenu}>
+          <BurgerIcon />
+        </button>
       </div>
     </header>
   );
