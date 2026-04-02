@@ -20,21 +20,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.navList {
-  display: flex;
-  gap: 44px;
-}
 
-.link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #fffdfa;
-  font-family: 'Roboto', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  transition: color 0.3s ease;
-}
 .navList {
   display: flex;
   gap: 44px;
@@ -66,4 +52,55 @@
 
 .burgerBtn {
   display: none;
+}
+.socials {
+  display: none;
+  gap: 20px;
+  svg {
+    width: 32px;
+    height: 32px;
+    fill: #ffffff;
+  }
+}
+
+@media (max-width: 768px) {
+  .burgerBtn {
+    display: block;
+    background: none;
+    border: none;
+  }
+
+  .nav {
+    position: fixed;
+    top: 109px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 109px);
+    background: rgba(40, 40, 40, 0.98);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    transition: left 0.4s ease;
+  }
+
+  .navList {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .socials {
+    display: flex;
+  }
+}
+
+@media (max-width: 390px) {
+  .container {
+    padding: 0 15px;
+  }
+  .logo svg {
+    width: 160px;
+    height: auto;
+  }
 }

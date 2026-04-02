@@ -6,6 +6,10 @@ import { ReactComponent as BurgerIcon } from '@assets/images/icons/burgerMenu.sv
 import { ReactComponent as CategoryIcon } from '@assets/images/icons/category.svg';
 import { ReactComponent as ImagesIcon } from '@assets/images/icons/images.svg';
 import { ReactComponent as FavIcon } from '@assets/images/icons/fav.svg';
+import { ReactComponent as TwitterIcon } from '@assets/images/icons/twitter.svg';
+import { ReactComponent as FacebookIcon } from '@assets/images/icons/facebook.svg';
+import { ReactComponent as InstaIcon } from '@assets/images/icons/insta.svg';
+import { ReactComponent as GithubIcon } from '@assets/images/icons/github.svg';
 
 const Header: React.FC = () => {
   return (
@@ -40,6 +44,20 @@ const Header: React.FC = () => {
               </NavLink>
             </li>
           </ul>
+          <div className={styles.socials}>
+            <a href="#">
+              <TwitterIcon />
+            </a>
+            <a href="#">
+              <FacebookIcon />
+            </a>
+            <a href="#">
+              <InstaIcon />
+            </a>
+            <a href="#">
+              <GithubIcon />
+            </a>
+          </div>
         </nav>
       </div>
     </header>
