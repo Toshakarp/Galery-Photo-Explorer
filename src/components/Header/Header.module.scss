@@ -2,9 +2,68 @@
 
 .header {
   width: 100%;
+  height: 109px;
+  background: $main-gradient;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .container {
   max-width: 1440px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navList {
+  display: flex;
+  gap: 44px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fffdfa;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+.navList {
+  display: flex;
+  gap: 44px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fffdfa;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+
+  .icon {
+    fill: none;
+    stroke: #e0a449;
+    stroke-width: 2px;
+  }
+
+  &:hover {
+    color: #e0a449;
+    .icon {
+      fill: #e0a449;
+    }
+  }
+}
+
+.burgerBtn {
+  display: none;
 }
