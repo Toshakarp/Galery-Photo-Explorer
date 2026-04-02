@@ -1,4 +1,4 @@
-@import '@styles/variables';
+@import 'styles/variables';
 
 .header {
   width: 100%;
@@ -72,6 +72,7 @@
 
   .nav {
     position: fixed;
+    background-color: $main-gradient;
     top: 109px;
     left: -100%;
     width: 100%;
