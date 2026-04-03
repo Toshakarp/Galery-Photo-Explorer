@@ -1,0 +1,151 @@
+@import 'styles/variables';
+
+.footer {
+  width: 100%;
+  height: 374px;
+  background: $main-gradient;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.brand {
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: $font-main;
+  opacity: 0.6;
+  margin: 24px 0;
+}
+
+.socials {
+  display: flex;
+  padding: 5px;
+  margin-top: 5px;
+  gap: 12px;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    fill: $white;
+    transition: fill 0.3s ease;
+
+    &:hover {
+      fill: $light-orange;
+    }
+  }
+}
+
+.linksBlock {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  margin-left: 40px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: $light-orange;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 3px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.link {
+  color: $font-main;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $light-orange;
+    opacity: 1;
+  }
+}
+
+.copyright {
+  font-size: 14px;
+  color: $font-main;
+  opacity: 0.6;
+  margin: 30px 0;
+}
+
+@media (max-width: 1024px) {
+  .topContent {
+    gap: 40px;
+  }
+
+  .linksBlock {
+    margin-left: 0;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column;
+    gap: 34px;
+  }
+
+  .list {
+    display: none;
+  }
+  .title {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer {
+    height: auto;
+  }
+  .container {
+    padding: 40px;
+  }
+
+  .topContent {
+    flex-direction: column;
+    gap: 34px;
+  }
+  .copyright {
+    margin-top: 50px;
+  }
+}
