@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Hero.module.scss';
+import styles from './HeroSection.module.scss';
 import SearchBar from 'components/SearchBar';
 
 interface HeroProps {
