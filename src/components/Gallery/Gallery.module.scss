@@ -29,6 +29,9 @@
 }
 
 @media (max-width: 700px) {
+  .gallery {
+    padding: 20px 20px;
+  }
   .loader,
   .empty {
     font-size: 48px;
