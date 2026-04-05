@@ -14,7 +14,11 @@ const Gallery: React.FC<GalleryProps> = ({ images, isLoading }) => {
   }
 
   if (!images.length) {
-    return <div className={styles.empty}>No images found. Try another search.</div>;
+    return (
+      <div className={styles.empty}>
+        The search didn't yield any results, please try <span>again</span>.
+      </div>
+    );
   }
 
   return (
