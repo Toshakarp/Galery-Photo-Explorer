@@ -4,9 +4,12 @@ import SearchBar from 'components/SearchBar';
 
 interface HeroProps {
   showSearch?: boolean;
+  searchValue?: string;
+  onSearchChange?: (value: string) => void;
+  onSearchSubmit?: () => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ showSearch }) => {
+const Hero: React.FC<HeroProps> = ({ showSearch, searchValue = '', onSearchChange, onSearchSubmit }) => {
   return (
     <section className={styles.hero}>
       <h1 className={`${styles.title} ${showSearch ? styles.small : ''}`}>
@@ -15,7 +18,7 @@ const Hero: React.FC<HeroProps> = ({ showSearch }) => {
 
       {showSearch && (
         <div className={styles.searchContainer}>
-          <SearchBar />
+          <SearchBar value={searchValue} onChange={onSearchChange || (() => {})} onSubmit={onSearchSubmit || (() => {})} />
         </div>
       )}
     </section>
