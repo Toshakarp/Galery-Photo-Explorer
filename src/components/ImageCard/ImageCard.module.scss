@@ -1,0 +1,55 @@
+@import 'styles/variables';
+
+.card {
+  width: 286px;
+  display: flex;
+  flex-direction: column;
+  background: $white;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    .bookmarkBtn {
+      background: #f9f9f9;
+    }
+  }
+}
+
+.image {
+  width: 100%;
+  height: 174px;
+}
+
+.info {
+  display: flex;
+  width: 100%;
+  height: 58.192px;
+  box-sizing: border-box;
+  padding: 0 9px 0 21px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #f0f1f1;
+  gap: 8px;
+}
+
+.title {
+  width: 197px;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  color: $text-gray;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 846px) {
+  .card {
+    width: 346.011px;
+    height: 170.841px;
+  }
+}

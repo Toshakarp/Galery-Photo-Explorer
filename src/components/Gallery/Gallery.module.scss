@@ -1,0 +1,40 @@
+@import 'styles/variables';
+
+.gallery {
+  font-family: 'Lexend Deca';
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 15%;
+}
+
+.loader,
+.empty {
+  width: 100%;
+  max-width: 684px;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 64px;
+  font-family: 'Lexend Deca';
+  font-weight: 700;
+  color: $text-gray;
+  line-height: normal;
+  padding: 40px 0;
+  text-transform: capitalize;
+  span {
+    color: $primary-orange;
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery {
+    padding: 20px 20px;
+  }
+  .loader,
+  .empty {
+    font-size: 48px;
+    max-width: 390px;
+  }
+}
