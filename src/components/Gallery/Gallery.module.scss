@@ -1,0 +1,17 @@
+.gallery {
+  font-family: 'Lexend Deca';
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 15%;
+}
+
+.loader,
+.empty {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 40px 0;
+}
