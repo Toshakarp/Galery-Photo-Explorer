@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styles from './Images.module.scss';
 import Hero from 'components/HeroSection';
 
 import Gallery from 'components/Gallery';
 import useDebounce from 'hooks/useDebounce';
-import { searchImagesRequest } from 'api/unsplash';
+import { searchImagesRequest, getRandomImagesRequest } from 'api/unsplash';
 import { IImage } from 'api/types';
 
 const Images: React.FC = () => {
@@ -15,20 +15,23 @@ const Images: React.FC = () => {
 
   const debouncedQuery = useDebounce(searchQuery, 500);
 
-  const fetchImages = async (query: string) => {
-    if (!query) return;
-
+  const fetchImages = useCallback(async (query: string) => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await searchImagesRequest(query);
-      setImages(response.results);
+      if (query.trim()) {
+        const response = await searchImagesRequest(query);
+        setImages(response.results);
+      } else {
+        const data = await getRandomImagesRequest();
+        setImages(data);
+      }
     } catch (err) {
       setError('Failed to load images');
     } finally {
       setIsLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchImages(debouncedQuery);
