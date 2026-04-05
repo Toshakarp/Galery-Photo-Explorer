@@ -1,0 +1,59 @@
+@import 'styles/variables';
+
+.hero {
+  width: 100%;
+  min-height: 421px;
+  background: url('/assets/images/hero_section.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.title {
+  max-width: 684px;
+  color: $font-main;
+  text-align: center;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+  -webkit-text-stroke: 1px $black;
+  font-size: 96px;
+  margin: 0;
+
+  span {
+    color: $accent-color;
+  }
+
+  &.small {
+    font-size: 64px;
+  }
+}
+
+.searchContainer {
+  margin-top: 87px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 790px) {
+  .hero {
+    min-height: 202px;
+  }
+
+  .title {
+    font-size: 48px;
+    max-width: 350px;
+
+    &.small {
+      font-size: 32px;
+    }
+  }
+
+  .searchContainer {
+    margin-top: 20px;
+  }
+}
