@@ -18,9 +18,17 @@ const ImageCard: React.FC<ImageCardProps> = ({ id, imageUrl, title }) => {
     // toggleBookmarkInStorage(id);
   };
 
+  const imageStyle: React.CSSProperties = {
+    backgroundImage: `url("${imageUrl}")`, // Добавили кавычки внутри url
+    backgroundColor: '#D9D9D9', // Цвет-заглушка (как в твоем коде)
+    backgroundSize: 'cover', // Масштабирование
+    backgroundPosition: 'center', // Центрирование
+    backgroundRepeat: 'no-repeat',
+  };
+
   return (
     <div className={styles.card}>
-      <div className={styles.image} style={{ background: `url(${imageUrl}) lightgray 50% / cover no-repeat, #D9D9D9` }} />
+      <div className={styles.image} style={imageStyle} />
       <div className={styles.info}>
         <h3 className={styles.title}>{title}</h3>
         <BookmarkButton isActive={isBookmarked} onClick={handleBookmarkClick} className={styles.bookmarkBtn} />

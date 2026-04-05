@@ -6,7 +6,7 @@
   flex-direction: column;
   background: $white;
   transition: box-shadow 0.3s ease;
-  //overflow: hidden;
+  overflow: hidden;
 
   &:hover {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -19,7 +19,7 @@
 
 .image {
   width: 286px;
-  height: 232.769px;
+  height: 174px;
 }
 
 .info {
@@ -27,15 +27,19 @@
   width: 286px;
   height: 58.192px;
   box-sizing: border-box;
-  padding: 0 24px;
+  padding: 0 9px 0 21px;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid #f0f1f1;
   gap: 8px;
 }
 
 .title {
-  font-size: 16px;
+  width: 197px;
+  font-size: 17px;
+  font-style: normal;
   font-weight: 500;
+  line-height: 150%;
   color: $text-black;
   margin: 0;
   white-space: nowrap;

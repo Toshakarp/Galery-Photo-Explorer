@@ -16,15 +16,14 @@
   transition: all 0.3s ease;
 
   svg {
-    width: 100%;
-    height: 100%;
-    stroke: $light-orange;
+    width: 42px;
+    height: 42px;
     transition: fill 0.3s ease;
   }
 
   &.active {
     svg {
-      fill: $light-orange;
+      fill: $primary-orange;
     }
   }
 }

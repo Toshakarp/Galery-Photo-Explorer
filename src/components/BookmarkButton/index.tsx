@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './BookmarkButton.module.scss';
-import { ReactComponent as BookmarkIcon } from 'assets/icons/bookmark.svg';
+import { ReactComponent as BookmarkIcon } from 'assets/images/icons/bookmark.svg';
 
 interface BookmarkButtonProps {
   isActive: boolean;
