@@ -1,0 +1,62 @@
+.paginationContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+  padding-right: 15px;
+}
+
+.pageButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  color: #393939;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #f17900;
+  }
+}
+
+.active {
+  background: #f17900;
+  color: #ffffff;
+  font-weight: 600;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.nextButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #393939;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #f17900;
+  }
+}
+
+@media (max-width: 790px) {
+  .paginationContainer {
+    justify-content: center;
+  }
+}
