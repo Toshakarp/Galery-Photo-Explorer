@@ -6,9 +6,10 @@ interface ImageCardProps {
   id: string;
   imageUrl: string;
   title: string;
+  onClick: () => void;
 }
 
-const ImageCard: React.FC<ImageCardProps> = ({ id, imageUrl, title }) => {
+const ImageCard: React.FC<ImageCardProps> = ({ id, imageUrl, title, onClick }) => {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   const handleBookmarkClick = () => {
@@ -28,7 +29,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ id, imageUrl, title }) => {
 
   return (
     <div className={styles.card}>
-      <div className={styles.image} style={imageStyle} />
+      <div className={styles.image} style={imageStyle} onClick={onClick} />
       <div className={styles.info}>
         <h3 className={styles.title}>{title}</h3>
         <BookmarkButton isActive={isBookmarked} onClick={handleBookmarkClick} className={styles.bookmarkBtn} />
