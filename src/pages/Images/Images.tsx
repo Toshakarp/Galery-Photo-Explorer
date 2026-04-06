@@ -4,6 +4,7 @@ import Hero from 'components/HeroSection';
 import SortBy from 'components/SortByButton';
 import Gallery from 'components/Gallery';
 import useDebounce from 'hooks/useDebounce';
+import Pagination from 'components/Pagination';
 import { searchImagesRequest, getRandomImagesRequest } from 'api/unsplash';
 import { IImage } from 'api/types';
 
@@ -14,16 +15,19 @@ const Images: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   const [orderBy, setOrderBy] = useState('relevant');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   const debouncedQuery = useDebounce(searchQuery, 500);
 
-  const fetchImages = useCallback(async (query: string, sort: string) => {
+  const fetchImages = useCallback(async (query: string, sort: string, page: number) => {
     setIsLoading(true);
     setError(null);
     try {
       if (query.trim()) {
-        const response = await searchImagesRequest(query, 1, sort);
+        const response = await searchImagesRequest(query, page, sort);
         setImages(response.results);
+        setTotalPages(response.total_pages);
       } else {
         const data = await getRandomImagesRequest();
         setImages(data);
@@ -36,11 +40,16 @@ const Images: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    fetchImages(debouncedQuery, orderBy);
+    setCurrentPage(1);
   }, [debouncedQuery, orderBy]);
 
+  useEffect(() => {
+    fetchImages(debouncedQuery, orderBy, currentPage);
+  }, [debouncedQuery, orderBy, currentPage]);
+
   const handleSearchSubmit = () => {
-    fetchImages(searchQuery, orderBy);
+    setCurrentPage(1);
+    fetchImages(searchQuery, orderBy, 1);
   };
 
   return (
@@ -48,12 +57,10 @@ const Images: React.FC = () => {
       <Hero showSearch={true} searchValue={searchQuery} onSearchChange={setSearchQuery} onSearchSubmit={handleSearchSubmit} />
       <div className={styles.error}>{error}</div>
       <div className={styles.content}>
-        {debouncedQuery.trim() && (
-          <div className={styles.sortWrapper}>
-            <SortBy currentSort={orderBy} onChange={setOrderBy} />
-          </div>
-        )}
+        {debouncedQuery.trim() && <SortBy currentSort={orderBy} onChange={setOrderBy} />}
         <Gallery images={images} isLoading={isLoading} />
+
+        {images.length > 0 && debouncedQuery.trim() && <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />}
       </div>
     </div>
   );
