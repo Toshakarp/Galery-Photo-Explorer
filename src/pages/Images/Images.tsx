@@ -60,7 +60,7 @@ const Images: React.FC = () => {
         {debouncedQuery.trim() && <SortBy currentSort={orderBy} onChange={setOrderBy} />}
         <Gallery images={images} isLoading={isLoading} />
 
-        {images.length > 0 && <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />}
+        {images.length > 0 && debouncedQuery.trim() && <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />}
       </div>
     </div>
   );
