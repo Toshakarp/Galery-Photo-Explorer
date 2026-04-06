@@ -6,9 +6,10 @@ import { IImage } from 'api/types';
 interface GalleryProps {
   images: IImage[];
   isLoading: boolean;
+  onImageClick: (index: number) => void;
 }
 
-const Gallery: React.FC<GalleryProps> = ({ images, isLoading }) => {
+const Gallery: React.FC<GalleryProps> = ({ images, isLoading, onImageClick }) => {
   if (isLoading) {
     return <div className={styles.loader}>Loading...</div>;
   }
@@ -23,8 +24,14 @@ const Gallery: React.FC<GalleryProps> = ({ images, isLoading }) => {
 
   return (
     <div className={styles.gallery}>
-      {images.map((image) => (
-        <ImageCard key={image.id} id={image.id} imageUrl={image.urls.regular} title={image.alt_description || 'Untitled Image'} />
+      {images.map((image, index) => (
+        <ImageCard
+          key={image.id}
+          id={image.id}
+          imageUrl={image.urls.regular}
+          title={image.alt_description || 'Untitled Image'}
+          onClick={() => onImageClick(index)}
+        />
       ))}
     </div>
   );

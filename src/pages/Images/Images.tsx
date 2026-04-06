@@ -5,6 +5,7 @@ import SortBy from 'components/SortByButton';
 import Gallery from 'components/Gallery';
 import useDebounce from 'hooks/useDebounce';
 import Pagination from 'components/Pagination';
+import ImageModal from 'components/ImageModal';
 import { searchImagesRequest, getRandomImagesRequest } from 'api/unsplash';
 import { IImage } from 'api/types';
 
@@ -17,6 +18,9 @@ const Images: React.FC = () => {
   const [orderBy, setOrderBy] = useState('relevant');
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const debouncedQuery = useDebounce(searchQuery, 500);
 
@@ -52,13 +56,33 @@ const Images: React.FC = () => {
     fetchImages(searchQuery, orderBy, 1);
   };
 
+  const openModal = (index: number) => {
+    setSelectedImageIndex(index);
+    setIsModalOpen(true);
+    document.body.style.overscrollBehavior = 'contain';
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+    document.body.style.overscrollBehavior = 'auto';
+  };
+
+  const handleNext = () => {
+    setSelectedImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const handlePrev = () => {
+    setSelectedImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
   return (
     <div className={styles.container}>
       <Hero showSearch={true} searchValue={searchQuery} onSearchChange={setSearchQuery} onSearchSubmit={handleSearchSubmit} />
       <div className={styles.error}>{error}</div>
       <div className={styles.content}>
         {debouncedQuery.trim() && <SortBy currentSort={orderBy} onChange={setOrderBy} />}
-        <Gallery images={images} isLoading={isLoading} />
+        <Gallery images={images} isLoading={isLoading} onImageClick={openModal} />
+
+        {isModalOpen && <ImageModal images={images} currentIndex={selectedImageIndex} onClose={closeModal} onNext={handleNext} onPrev={handlePrev} />}
 
         {images.length > 0 && debouncedQuery.trim() && <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />}
       </div>

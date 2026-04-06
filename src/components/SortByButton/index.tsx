@@ -25,7 +25,6 @@ const SortBy: React.FC<SortByButtonProps> = ({ currentSort, onChange }) => {
 
   return (
     <div className={styles.wrapper}>
-      {/* Лейбл слева */}
       <span className={styles.label}>Sort by</span>
 
       <div className={styles.container} onBlur={handleBlur} tabIndex={0}>
