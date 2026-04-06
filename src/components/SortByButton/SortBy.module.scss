@@ -5,15 +5,15 @@
   align-items: center;
   justify-content: flex-end;
   gap: 12px;
-  margin: 25px 0;
   width: 100%;
   font-family: 'Montserrat', sans-serif;
+  padding: 20px 15px;
 }
 
 .label {
   font-size: 16px;
   font-weight: 500;
-  color: #333;
+  color: $text-gray;
   text-transform: capitalize;
 }
 
@@ -29,13 +29,13 @@
   padding: 0 16px;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
-  border: 1px solid #c4c4c4;
+  background: $white;
+  border: 1px solid $border-gray-2;
   border-radius: 16px;
   cursor: pointer;
 
   .currentValue {
-    color: #c4c4c4;
+    color: $border-gray-2;
     font-size: 16px;
     text-transform: capitalize;
   }
@@ -46,7 +46,7 @@
   height: 24px;
   transition: transform 0.3s ease;
   path {
-    fill: #c4c4c4;
+    fill: $border-gray-2;
   }
 
   &.rotated {
@@ -59,8 +59,8 @@
   top: calc(100% + 8px);
   right: 0;
   width: 100%;
-  background: #fff;
-  border: 1px solid #c4c4c4;
+  background: $white;
+  border: 1px solid $border-gray-2;
   border-radius: 16px;
   list-style: none;
   padding: 8px 0;
@@ -72,14 +72,20 @@
   padding: 10px 16px;
   cursor: pointer;
   font-size: 14px;
-  color: #666;
+  color: $border-gray-2;
   text-transform: capitalize;
+  border-radius: 16px;
 
   &:hover {
-    background: #f5f5f5;
+    background: $bg-button;
   }
   &.active {
     color: $primary-orange;
     font-weight: 600;
+  }
+}
+@media (max-width: 790px) {
+  .paginationContainer {
+    justify-content: center;
   }
 }

@@ -1,3 +1,5 @@
+@import 'styles/variables';
+
 .paginationContainer {
   display: flex;
   justify-content: flex-end;
@@ -12,7 +14,7 @@
   border: none;
   cursor: pointer;
 
-  color: #393939;
+  color: $text-gray;
   font-family: 'Lexend Deca', sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -28,17 +30,17 @@
   transition: all 0.3s ease;
 
   &:hover {
-    color: #f17900;
+    color: $accent-color;
   }
 }
 
 .active {
-  background: #f17900;
-  color: #ffffff;
+  background: $accent-color;
+  color: $white;
   font-weight: 600;
 
   &:hover {
-    color: #ffffff;
+    color: $white;
   }
 }
 
@@ -46,12 +48,12 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  color: #393939;
+  color: $text-gray;
   margin-left: 10px;
   transition: all 0.3s ease;
 
   &:hover {
-    color: #f17900;
+    color: $accent-color;
   }
 }
 
