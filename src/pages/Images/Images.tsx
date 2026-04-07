@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Images.module.scss';
 import Hero from 'components/HeroSection';
 import SortBy from 'components/SortByButton';
 import Gallery from 'components/Gallery';
 import Pagination from 'components/Pagination';
 import ImageModal from 'components/ImageModal';
+import { useLocation } from 'react-router-dom';
 import { useImageGallery } from 'hooks/useImageGallery';
 import { useImageModal } from 'hooks/useImageModal';
 
 const Images: React.FC = () => {
+  const location = useLocation();
+  const categoryQuery = location.state?.query || '';
+
   const {
     searchQuery,
     setSearchQuery,
@@ -22,9 +26,15 @@ const Images: React.FC = () => {
     currentPage,
     setCurrentPage,
     totalPages,
-  } = useImageGallery();
+  } = useImageGallery(categoryQuery);
 
   const { isOpen, currentIndex, openModal, closeModal, handleNext, handlePrev } = useImageModal(images.length);
+
+  useEffect(() => {
+    if (categoryQuery) {
+      setSearchQuery(categoryQuery);
+    }
+  }, [categoryQuery, setSearchQuery]);
 
   return (
     <div className={styles.container}>
