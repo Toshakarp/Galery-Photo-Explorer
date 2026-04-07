@@ -10,7 +10,7 @@ interface BookmarkButtonProps {
 
 const BookmarkButton: React.FC<BookmarkButtonProps> = ({ isActive, onClick, className }) => {
   return (
-    <button className={`${styles.button} ${isActive ? styles.active : ''} ${className || ''}`} onClick={onClick} aria-label="Toggle bookmark">
+    <button className={`${styles.button} ${isActive ? styles.active : ''} ${className || ''}`} onClick={onClick} aria-label="add to favorites">
       <BookmarkIcon />
     </button>
   );

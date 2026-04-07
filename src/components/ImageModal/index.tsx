@@ -40,7 +40,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ images, currentIndex, onClose, 
             <img src={currentImage.urls.regular} alt={currentImage.alt_description || 'Image'} className={styles.image} />
             <div className={styles.info}>
               <h3 className={styles.title}>{currentImage.alt_description || 'Untitled'}</h3>
-              <BookmarkButton isActive={isFavorite(currentImage.id)} onClick={() => onToggleFavorite(currentImage)} />
+              <BookmarkButton isActive={isFavorite(currentImage.id)} onClick={() => onToggleFavorite(currentImage)} className={styles.bookmarkBtn} />
             </div>
           </div>
 
