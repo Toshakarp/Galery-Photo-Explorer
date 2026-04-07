@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.scss';
-import { ReactComponent as Logo } from 'assets/images/icons/logo.svg';
-import { ReactComponent as BurgerIcon } from 'assets/images/icons/burgerMenu.svg';
-import { ReactComponent as CategoryIcon } from 'assets/images/icons/category.svg';
-import { ReactComponent as ImagesIcon } from 'assets/images/icons/images.svg';
-import { ReactComponent as FavIcon } from 'assets/images/icons/fav.svg';
-import { ReactComponent as TwitterIcon } from 'assets/images/icons/twitter.svg';
-import { ReactComponent as FacebookIcon } from 'assets/images/icons/facebook.svg';
-import { ReactComponent as InstaIcon } from 'assets/images/icons/insta.svg';
-import { ReactComponent as GithubIcon } from 'assets/images/icons/github.svg';
+import Logo from 'assets/images/icons/logo.svg?react';
+import BurgerIcon from 'assets/images/icons/burgerMenu.svg?react';
+import CategoryIcon from 'assets/images/icons/category.svg?react';
+import ImagesIcon from 'assets/images/icons/images.svg?react';
+import FavIcon from 'assets/images/icons/fav.svg?react';
+import TwitterIcon from 'assets/images/icons/twitter.svg?react';
+import FacebookIcon from 'assets/images/icons/facebook.svg?react';
+import InstaIcon from 'assets/images/icons/insta.svg?react';
+import GithubIcon from 'assets/images/icons/github.svg?react';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -19,7 +19,7 @@ const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <NavLink to="/" className={styles.logo} onClick={closeMenu}>
-          <Logo width="287" height="49" />
+          <Logo />
         </NavLink>
 
         <nav className={`${styles.nav} ${isOpen ? styles.navOpen : ''}`}>

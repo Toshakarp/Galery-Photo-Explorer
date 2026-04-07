@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import styles from './Footer.module.scss';
-import { ReactComponent as Logo } from 'assets/images/icons/logo.svg';
-import { ReactComponent as TwitterIcon } from 'assets/images/icons/twitter.svg';
-import { ReactComponent as FacebookIcon } from 'assets/images/icons/facebook.svg';
-import { ReactComponent as InstaIcon } from 'assets/images/icons/insta.svg';
-import { ReactComponent as GithubIcon } from 'assets/images/icons/github.svg';
+import Logo from 'assets/images/icons/logo.svg?react';
+import TwitterIcon from 'assets/images/icons/twitter.svg?react';
+import FacebookIcon from 'assets/images/icons/facebook.svg?react';
+import InstaIcon from 'assets/images/icons/insta.svg?react';
+import GithubIcon from 'assets/images/icons/github.svg?react';
 
 const Footer: React.FC = () => {
   return (

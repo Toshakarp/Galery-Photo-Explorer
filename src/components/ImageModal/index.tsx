@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './ImageModal.module.scss';
 import BookmarkButton from 'components/BookmarkButton';
-import { ReactComponent as CancelCross } from 'assets/images/icons/CancelCross.svg';
-import { ReactComponent as ArrowNext } from 'assets/images/icons/arrowNext.svg';
+import CancelCross from 'assets/images/icons/CancelCross.svg?react';
+import ArrowNext from 'assets/images/icons/arrowNext.svg?react';
 import { IImage } from 'api/types';
 
 interface ImageModalProps {
