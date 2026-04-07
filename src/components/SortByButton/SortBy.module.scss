@@ -1,0 +1,91 @@
+@import 'styles/variables';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px 15px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 500;
+  color: $text-gray;
+  text-transform: capitalize;
+}
+
+.container {
+  position: relative;
+  outline: none;
+}
+
+.button {
+  display: flex;
+  width: 146px;
+  height: 41px;
+  padding: 0 16px;
+  justify-content: space-between;
+  align-items: center;
+  background: $white;
+  border: 1px solid $border-gray-2;
+  border-radius: 16px;
+  cursor: pointer;
+
+  .currentValue {
+    color: $border-gray-2;
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+  path {
+    fill: $border-gray-2;
+  }
+
+  &.rotated {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 100%;
+  background: $white;
+  border: 1px solid $border-gray-2;
+  border-radius: 16px;
+  list-style: none;
+  padding: 8px 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.option {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  color: $border-gray-2;
+  text-transform: capitalize;
+  border-radius: 16px;
+
+  &:hover {
+    background: $bg-button;
+  }
+  &.active {
+    color: $primary-orange;
+    font-weight: 600;
+  }
+}
+@media (max-width: 790px) {
+  .paginationContainer {
+    justify-content: center;
+  }
+}

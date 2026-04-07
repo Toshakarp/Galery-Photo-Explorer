@@ -1,0 +1,44 @@
+@import 'styles/variables';
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 808px;
+  height: 54px;
+  border-radius: 8px;
+  background: $white;
+  padding: 0 25px;
+  box-sizing: border-box;
+}
+
+.icon {
+  width: 17px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-right: 16px;
+}
+
+.input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+}
+
+@media (max-width: 790px) {
+  .searchBar {
+    flex-direction: row-reverse;
+    border-radius: 16px;
+    padding: 0 16px;
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 0;
+    margin-left: 16px;
+  }
+}

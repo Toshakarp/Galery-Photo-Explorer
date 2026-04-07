@@ -1,0 +1,64 @@
+@import 'styles/variables';
+
+.paginationContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+  padding-right: 15px;
+}
+
+.pageButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  color: $text-gray;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+.active {
+  background: $accent-color;
+  color: $white;
+  font-weight: 600;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.nextButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: $text-gray;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+@media (max-width: 790px) {
+  .paginationContainer {
+    justify-content: center;
+  }
+}
