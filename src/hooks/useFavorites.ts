@@ -4,7 +4,6 @@ import { IImage } from 'api/types';
 export const useFavorites = () => {
   const [favorites, setFavorites] = useState<IImage[]>([]);
 
-  // Загружаем при монтировании
   useEffect(() => {
     const saved = localStorage.getItem('favorites');
     if (saved) {
