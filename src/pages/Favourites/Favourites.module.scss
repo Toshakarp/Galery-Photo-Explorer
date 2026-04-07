@@ -1,0 +1,23 @@
+@import 'styles/variables';
+
+.container {
+  padding: 20px;
+}
+
+.title {
+  width: 100%;
+  max-width: 310px;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 32px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  color: $light-orange;
+  line-height: normal;
+  padding: 40px 0;
+  span {
+    display: block;
+    color: $text-gray;
+    font-size: 40px;
+  }
+}

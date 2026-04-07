@@ -1,0 +1,142 @@
+@import 'styles/variables';
+
+%nav-link-shared {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.header {
+  width: 100%;
+  height: 109px;
+  background: $main-gradient;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  overflow-x: clip;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1001;
+}
+
+.navList {
+  display: flex;
+  gap: 44px;
+}
+
+.link {
+  @extend %nav-link-shared;
+  color: $font-main;
+
+  .icon {
+    stroke: $white;
+    fill: none;
+    stroke-width: 2px;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    color: $light-orange;
+    .icon {
+      color: $light-orange;
+      stroke: $light-orange;
+    }
+  }
+}
+
+.activeLink {
+  @extend %nav-link-shared;
+  color: $light-orange;
+
+  .icon {
+    fill: none;
+    color: $light-orange;
+    stroke: $light-orange;
+  }
+}
+
+.burgerBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1002;
+}
+
+.socials {
+  display: none;
+  gap: 20px;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    fill: $white;
+    transition: fill 0.3s ease;
+
+    &:hover {
+      fill: $light-orange;
+      color: $light-orange;
+    }
+  }
+}
+
+@media (max-width: 790px) {
+  .container {
+    flex-direction: row-reverse;
+    padding: 0 20px;
+  }
+  .logo svg {
+    min-width: 185px;
+  }
+
+  .burgerBtn {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 109px;
+    right: -100%;
+    width: 100%;
+    height: 207px;
+    background: $main-gradient;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.2s ease;
+    z-index: -1;
+  }
+
+  .nav.navOpen {
+    right: 0;
+  }
+
+  .navList {
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .socials {
+    display: flex;
+    gap: 24px;
+    padding-top: 5px;
+    margin-top: 20px;
+  }
+}
