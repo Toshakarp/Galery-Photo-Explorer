@@ -7,9 +7,12 @@ interface GalleryProps {
   images: IImage[];
   isLoading: boolean;
   onImageClick: (index: number) => void;
+  isFavorite: (id: string) => boolean;
+  onToggleFavorite: (image: IImage) => void;
+  emptyMessage?: React.ReactNode;
 }
 
-const Gallery: React.FC<GalleryProps> = ({ images, isLoading, onImageClick }) => {
+const Gallery: React.FC<GalleryProps> = ({ images, isLoading, onImageClick, isFavorite, onToggleFavorite, emptyMessage }) => {
   if (isLoading) {
     return <div className={styles.loader}>Loading...</div>;
   }
@@ -17,7 +20,11 @@ const Gallery: React.FC<GalleryProps> = ({ images, isLoading, onImageClick }) =>
   if (!images.length) {
     return (
       <div className={styles.empty}>
-        The search didn't yield any results, please try <span>again</span>.
+        {emptyMessage || (
+          <>
+            The search didn't yield any results, please try <span>again</span>.
+          </>
+        )}
       </div>
     );
   }
@@ -30,6 +37,8 @@ const Gallery: React.FC<GalleryProps> = ({ images, isLoading, onImageClick }) =>
           id={image.id}
           imageUrl={image.urls.regular}
           title={image.alt_description || 'Untitled Image'}
+          isActive={isFavorite(image.id)}
+          onBookmarkClick={() => onToggleFavorite(image)}
           onClick={() => onImageClick(index)}
         />
       ))}

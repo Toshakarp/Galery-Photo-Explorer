@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './ImageCard.module.scss';
 import BookmarkButton from 'components/BookmarkButton/';
 
@@ -6,24 +6,17 @@ interface ImageCardProps {
   id: string;
   imageUrl: string;
   title: string;
+  isActive: boolean;
+  onBookmarkClick: () => void;
   onClick: () => void;
 }
 
-const ImageCard: React.FC<ImageCardProps> = ({ id, imageUrl, title, onClick }) => {
-  const [isBookmarked, setIsBookmarked] = useState(false);
-
-  const handleBookmarkClick = () => {
-    setIsBookmarked((prev) => !prev);
-
-    // по id в localStorage
-    // toggleBookmarkInStorage(id);
-  };
-
+const ImageCard: React.FC<ImageCardProps> = ({ imageUrl, title, isActive, onBookmarkClick, onClick }) => {
   const imageStyle: React.CSSProperties = {
-    backgroundImage: `url("${imageUrl}")`, // Добавили кавычки внутри url
-    backgroundColor: '#D9D9D9', // Цвет-заглушка (как в твоем коде)
-    backgroundSize: 'cover', // Масштабирование
-    backgroundPosition: 'center', // Центрирование
+    backgroundImage: `url("${imageUrl}")`,
+    backgroundColor: '#D9D9D9',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
   };
 
@@ -32,7 +25,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ id, imageUrl, title, onClick }) =
       <div className={styles.image} style={imageStyle} onClick={onClick} />
       <div className={styles.info}>
         <h3 className={styles.title}>{title}</h3>
-        <BookmarkButton isActive={isBookmarked} onClick={handleBookmarkClick} className={styles.bookmarkBtn} />
+        <BookmarkButton isActive={isActive} onClick={onBookmarkClick} className={styles.bookmarkBtn} />
       </div>
     </div>
   );

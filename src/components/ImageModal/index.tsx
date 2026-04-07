@@ -11,17 +11,17 @@ interface ImageModalProps {
   onClose: () => void;
   onNext: () => void;
   onPrev: () => void;
+  isFavorite: (id: string) => boolean;
+  onToggleFavorite: (image: IImage) => void;
 }
 
-const ImageModal: React.FC<ImageModalProps> = ({ images, currentIndex, onClose, onNext, onPrev }) => {
+const ImageModal: React.FC<ImageModalProps> = ({ images, currentIndex, onClose, onNext, onPrev, isFavorite, onToggleFavorite }) => {
   const currentImage = images[currentIndex];
 
   if (!currentImage) return null;
 
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
+    if (e.target === e.currentTarget) onClose();
   };
 
   return (
@@ -40,7 +40,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ images, currentIndex, onClose, 
             <img src={currentImage.urls.regular} alt={currentImage.alt_description || 'Image'} className={styles.image} />
             <div className={styles.info}>
               <h3 className={styles.title}>{currentImage.alt_description || 'Untitled'}</h3>
-              <BookmarkButton isActive={false} onClick={() => {}} />
+              <BookmarkButton isActive={isFavorite(currentImage.id)} onClick={() => onToggleFavorite(currentImage)} />
             </div>
           </div>
 

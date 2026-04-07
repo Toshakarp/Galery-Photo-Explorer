@@ -8,6 +8,7 @@ import ImageModal from 'components/ImageModal';
 import { useLocation } from 'react-router-dom';
 import { useImageGallery } from 'hooks/useImageGallery';
 import { useImageModal } from 'hooks/useImageModal';
+import { useFavorites } from 'hooks/useFavorites';
 
 const Images: React.FC = () => {
   const location = useLocation();
@@ -30,6 +31,8 @@ const Images: React.FC = () => {
 
   const { isOpen, currentIndex, openModal, closeModal, handleNext, handlePrev } = useImageModal(images.length);
 
+  const { isFavorite, toggleFavorite } = useFavorites();
+
   useEffect(() => {
     if (categoryQuery) {
       setSearchQuery(categoryQuery);
@@ -45,9 +48,19 @@ const Images: React.FC = () => {
       <div className={styles.content}>
         {debouncedQuery.trim() && <SortBy currentSort={orderBy} onChange={setOrderBy} />}
 
-        <Gallery images={images} isLoading={isLoading} onImageClick={openModal} />
+        <Gallery images={images} isLoading={isLoading} onImageClick={openModal} isFavorite={isFavorite} onToggleFavorite={toggleFavorite} />
 
-        {isOpen && <ImageModal images={images} currentIndex={currentIndex} onClose={closeModal} onNext={handleNext} onPrev={handlePrev} />}
+        {isOpen && (
+          <ImageModal
+            images={images}
+            currentIndex={currentIndex}
+            onClose={closeModal}
+            onNext={handleNext}
+            onPrev={handlePrev}
+            isFavorite={isFavorite}
+            onToggleFavorite={toggleFavorite}
+          />
+        )}
 
         {images.length > 0 && debouncedQuery.trim() && <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />}
       </div>
