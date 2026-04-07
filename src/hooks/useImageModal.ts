@@ -7,12 +7,12 @@ export const useImageModal = (totalImages: number) => {
   const openModal = useCallback((index: number) => {
     setCurrentIndex(index);
     setIsOpen(true);
-    document.body.style.overscrollBehavior = 'contain';
+    document.body.style.overflow = 'hidden';
   }, []);
 
   const closeModal = useCallback(() => {
     setIsOpen(false);
-    document.body.style.overscrollBehavior = 'auto';
+    document.body.style.overflow = 'auto';
   }, []);
 
   const handleNext = useCallback(() => {
