@@ -1,7 +1,7 @@
 import { IUnsplashResponse, IImage } from './types';
 
 const BASE_URL = 'https://api.unsplash.com';
-const ACCESS_KEY = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
+const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
 
 async function fetchFromUnsplash<T>(endpoint: string): Promise<T> {
   try {
