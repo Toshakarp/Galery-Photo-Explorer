@@ -10,6 +10,15 @@ export default defineConfig({
       include: '**/*.svg?react',
     }),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        quietDeps: true,
+        silenceDeprecations: ['import'],
+      },
+    },
+  },
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
