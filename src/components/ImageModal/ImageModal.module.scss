@@ -38,6 +38,14 @@
   flex-direction: column;
   width: 600px;
   background: $white;
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    box-shadow: $shadow;
+
+    .bookmarkBtn {
+      background: $bg-button;
+    }
+  }
 }
 
 .image {
@@ -67,6 +75,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.bookmarkBtn {
+  width: 60px;
+  height: 60px;
 }
 
 .arrow {
