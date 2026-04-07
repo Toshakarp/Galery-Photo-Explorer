@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './CategoryList.module.scss';
-import CategoryCard from 'components/CategoryCard';
+import CategoryCard from 'components/CategoryCard/CategoryCard';
 import { ICategory } from 'api/types';
 
 interface CategoryListProps {

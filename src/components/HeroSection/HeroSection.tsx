@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './HeroSection.module.scss';
-import SearchBar from 'components/SearchBar';
+import SearchBar from 'components/SearchBar/SearchBar';
 
 interface HeroProps {
   showSearch?: boolean;

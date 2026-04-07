@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ImageCard.module.scss';
-import BookmarkButton from 'components/BookmarkButton/';
+import BookmarkButton from 'components/BookmarkButton/BookmarkButton';
 
 interface ImageCardProps {
   id: string;

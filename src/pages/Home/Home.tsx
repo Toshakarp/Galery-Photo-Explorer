@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Home.module.scss';
-import Hero from 'components/HeroSection';
-import CategoryList from 'components/CategoryList';
+import Hero from 'components/HeroSection/HeroSection';
+import CategoryList from 'components/CategoryList/CategoryList';
 import { useCategories } from 'hooks/useCategories';
 
 const Home: React.FC = () => {

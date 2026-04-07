@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import styles from './Images.module.scss';
-import Hero from 'components/HeroSection';
-import SortBy from 'components/SortByButton';
-import Gallery from 'components/Gallery';
-import Pagination from 'components/Pagination';
-import ImageModal from 'components/ImageModal';
+import Hero from 'components/HeroSection/HeroSection';
+import SortBy from 'components/SortByButton/SortByButton';
+import Gallery from 'components/Gallery/Gallery';
+import Pagination from 'components/Pagination/Pagination';
+import ImageModal from 'components/ImageModal/ImageModal';
 import { useLocation } from 'react-router-dom';
 import { useImageGallery } from 'hooks/useImageGallery';
 import { useImageModal } from 'hooks/useImageModal';

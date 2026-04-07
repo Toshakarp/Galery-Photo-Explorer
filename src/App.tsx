@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Layout from 'components/Layout';
-import Home from 'pages/Home';
-import Images from 'pages/Images';
-import Favourites from 'pages/Favourites';
-import NotFound from 'pages/NotFound';
+import Layout from 'components/Layout/Layout';
+import Home from 'pages/Home/Home';
+import Images from 'pages/Images/Images';
+import Favourites from 'pages/Favourites/Favourites';
+import NotFound from 'pages/NotFound/NotFound';
 
 const App: React.FC = () => {
   return (

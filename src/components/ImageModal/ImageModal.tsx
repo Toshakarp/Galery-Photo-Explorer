@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ImageModal.module.scss';
-import BookmarkButton from 'components/BookmarkButton';
+import BookmarkButton from 'components/BookmarkButton/BookmarkButton';
 import CancelCross from 'assets/images/icons/CancelCross.svg?react';
 import ArrowNext from 'assets/images/icons/arrowNext.svg?react';
 import { IImage } from 'api/types';

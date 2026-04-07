@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Favourites.module.scss';
-import Gallery from 'components/Gallery';
-import ImageModal from 'components/ImageModal';
+import Gallery from 'components/Gallery/Gallery';
+import ImageModal from 'components/ImageModal/ImageModal';
 import { useFavorites } from 'hooks/useFavorites';
 import { useImageModal } from 'hooks/useImageModal';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Gallery.module.scss';
-import ImageCard from 'components/ImageCard';
+import ImageCard from 'components/ImageCard/ImageCard';
 import { IImage } from 'api/types';
 
 interface GalleryProps {
