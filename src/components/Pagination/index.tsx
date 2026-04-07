@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Pagination.module.scss';
-import { ReactComponent as Arrow } from 'assets/images/icons/paginationArrow.svg';
+import Arrow from 'assets/images/icons/paginationArrow.svg?react';
 
 interface PaginationProps {
   currentPage: number;

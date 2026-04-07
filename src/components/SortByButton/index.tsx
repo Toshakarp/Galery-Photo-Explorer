@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './SortBy.module.scss';
-import { ReactComponent as ArrowIcon } from 'assets/images/icons/arrow.svg';
+import ArrowIcon from 'assets/images/icons/arrow.svg?react';
 
 export type SortOption = 'relevant' | 'latest';
 
