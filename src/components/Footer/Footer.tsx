@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import styles from './Footer.module.scss';
-import Logo from 'assets/images/icons/logo.svg?react';
 import TwitterIcon from 'assets/images/icons/twitter.svg?react';
 import FacebookIcon from 'assets/images/icons/facebook.svg?react';
 import InstaIcon from 'assets/images/icons/insta.svg?react';
@@ -13,23 +12,21 @@ const Footer: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.topContent}>
           <div className={styles.brand}>
-            <a href="/" className={styles.logo}>
-              <Logo width="287" height="49" />
-            </a>
+            <a href="/" className={styles.logo}></a>
             <p className={styles.description}>
               We have images that capture every mood and inspire every vision. From breathtaking landscapes to vibrant portraits.
             </p>
             <div className={styles.socials}>
-              <a href="https://x.com/modsencompany">
+              <a href="https://x.com/">
                 <TwitterIcon />
               </a>
-              <a href="https://www.facebook.com/ModsenSoftware/">
+              <a href="https://www.facebook.com/">
                 <FacebookIcon />
               </a>
-              <a href="https://www.instagram.com/modsencompany/">
+              <a href="https://www.instagram.com/">
                 <InstaIcon />
               </a>
-              <a href="https://github.com/Toshakarp/galery-test-task/tree/main">
+              <a href="https://github.com/">
                 <GithubIcon />
               </a>
             </div>

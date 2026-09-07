@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.scss';
-import Logo from 'assets/images/icons/logo.svg?react';
 import BurgerIcon from 'assets/images/icons/burgerMenu.svg?react';
 import CategoryIcon from 'assets/images/icons/category.svg?react';
 import ImagesIcon from 'assets/images/icons/images.svg?react';
@@ -18,9 +17,7 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <NavLink to="/" className={styles.logo} onClick={closeMenu}>
-          <Logo />
-        </NavLink>
+        <NavLink to="/" className={styles.logo} onClick={closeMenu}></NavLink>
 
         <nav className={`${styles.nav} ${isOpen ? styles.navOpen : ''}`}>
           <ul className={styles.navList}>
