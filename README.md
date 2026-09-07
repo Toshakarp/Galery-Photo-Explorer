@@ -1,4 +1,4 @@
-# Modsen Gallery
+# Galery-Photo-Explorer
 
 Image gallery application built with React and Vite, utilizing the Unsplash API for data fetching.
 
